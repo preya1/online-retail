@@ -12,8 +12,10 @@ public class PaginaController {
 	public ModelAndView index() {
 		
 		ModelAndView mv = new ModelAndView("pagina");
-		
+		mv.addObject("Salutare","Bine Ai Venit Pe Pagina - Spring MVC");
 		return mv;
+		
+		
 	}
 	
 }
