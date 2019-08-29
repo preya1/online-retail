@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PaginaController {
 
-	@RequestMapping(value = {"/","/home","index}"})
+	@RequestMapping(value = {"/","/home","/index"})
 	
 	public ModelAndView index() {
 		
@@ -20,8 +20,11 @@ public class PaginaController {
 	
 	@RequestMapping(value = "/test")
 	public ModelAndView test(@RequestParam("Salutare")String Salutare) {
+		if(Salutare == null) {
+			Salutare = "Salutare !";
+		}
 		ModelAndView mv = new ModelAndView("pagina");
-		mv.addObject("Salutare","Bine Ai Venit Pe Pagina - Spring MVC");
+		mv.addObject("Salutare",Salutare);
 		return mv;
 	}
 	
